@@ -1,0 +1,7 @@
+{
+  "name": "The Salt Mine (moved)",
+  "short_name": "Salt Mine (old)",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone"
+}

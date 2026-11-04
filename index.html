@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>The Salt Mine has moved</title>
+<style>
+  :root { color-scheme: light dark; --bg: #f2f4f7; --card: #fff; --ink: #1d2330; --muted: #5d6677; --accent: #b23a5c; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #141922; --card: #1d2430; --ink: #eef1f6; --muted: #a3acbb; --accent: #e0668a; } }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--bg); color: var(--ink);
+    font: 17px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; padding: env(safe-area-inset-top, 0) 20px env(safe-area-inset-bottom, 0); box-sizing: border-box; }
+  .card { background: var(--card); border-radius: 18px; padding: 28px 22px; max-width: 420px; width: 100%; text-align: center; }
+  h1 { font-size: 24px; margin: 0 0 10px; }
+  p { margin: 0 0 14px; color: var(--muted); }
+  a.btn { display: block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; padding: 15px; border-radius: 14px; margin: 18px 0 6px; }
+  ol { text-align: left; color: var(--muted); padding-left: 22px; margin: 6px 0 0; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>The Salt Mine has moved</h1>
+  <p>Salt Mine Beta is now <b>The Salt Mine</b>, at a new address. Your account, games and decks are all there.</p>
+  <a class="btn" id="go" href="https://joeypagaduan.github.io/salt-mine/">Open The Salt Mine</a>
+  <div id="installed" hidden>
+    <p style="margin-top:14px">You opened the old home-screen icon. To fix it:</p>
+    <ol><li>Tap <b>Open The Salt Mine</b>.</li><li>Add it to your home screen again (Share &gt; Add to Home Screen on iPhone; &#8942; &gt; Install app in Chrome).</li><li>Remove the old icon.</li></ol>
+  </div>
+</div>
+<script>
+  // Keeps invite codes and anything else in the link: ?join=ABCDE... and #view
+  var target = 'https://joeypagaduan.github.io/salt-mine/' + location.search + location.hash;
+  document.getElementById('go').href = target;
+  var standalone = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone;
+  if (standalone) document.getElementById('installed').hidden = false;
+  else location.replace(target);
+</script>
+</body>
+</html>
